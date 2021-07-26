@@ -34,7 +34,7 @@ Note: Orderpayment feature is not implemented because there is not payment data 
 
 1. Install Visual Code and Node JS.
 2. Create a repo
-3. npm -init -y
+3. npm init -y
 4. npm install cypress
 
 ## Cypress Cucumber
