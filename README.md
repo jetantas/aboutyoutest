@@ -37,6 +37,13 @@ Note: Orderpayment feature is not implemented because there is not payment data 
 3. npm init -y
 4. npm install cypress
 
+## Launch test runner and Generate cypress.json file
+
+1. npx cypress open
+
+## Launch and execute test cases in the terminal
+1. npx cypress run
+
 ## Cypress Cucumber
 
 1. npm install --save-dev cypress-cucumber-preprocessor
@@ -56,11 +63,6 @@ Note: Orderpayment feature is not implemented because there is not payment data 
 4. npm install mochawesome-merge --save-dev
 5. npm install mochawesome-report-generator --save-dev
 
-## Test execution in Terminal
 
-1. npx cypress run
-
-## Test execution in Browser
-1. npx cypress open
 
 
