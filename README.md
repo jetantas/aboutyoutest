@@ -73,7 +73,18 @@ Note: Orderpayment feature is not implemented because there is not payment data 
 3. npm install mochawesome --save-dev
 4. npm install mochawesome-merge --save-dev
 5. npm install mochawesome-report-generator --save-dev
-
-
+6. Add in cypress.json
+     "baseUrl": "https://react-redux.realworld.io",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+      "reporterEnabled": "mochaawesome",
+      "mochawesomeReporterOptions": {
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      }
+    },
 
 
