@@ -48,12 +48,23 @@ Note: Orderpayment feature is not implemented because there is not payment data 
 
 1. npm install --save-dev cypress-cucumber-preprocessor
 2. Add in plugins/index.js  
-3. Add/edit dependencies in cypress.json and package.json
+    const cucumber = require('cypress-cucumber-preprocessor').default
+    module.exports = (on, config) => {
+      on('file:preprocessor',cucumber())
+    }
+4. Add/edit dependencies in cypress.json 
+    "testFiles": "**/*.feature" 
+5. Add/edit dependencies in package.json
+   "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+    }
+    
 
 ## Cypress xpath
 
 1. npm install cypress-xpath
 2. add require in support/index.js  
+    require('cypress-xpath')
 
 ## Mochawesome Reporter Installation
 
