@@ -65,7 +65,11 @@ Note: Orderpayment feature is not implemented because there is not payment data 
 1. npm install cypress-xpath
 2. add require in support/index.js  
     require('cypress-xpath')
-
+3. Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+  })
 ## Mochawesome Reporter Installation
 
 1. npm install mocha --save-dev
