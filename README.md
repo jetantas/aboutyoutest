@@ -59,6 +59,15 @@ Note: Orderpayment feature is not implemented because there is not payment data 
     "nonGlobalStepDefinitions": true
     }
     
+    "scripts": {
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
+    "pretest": "npm run clean:reports", 
+    "scripts": "cypress run",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "test" : "npm run scripts || npm run posttest" 
+    },
 
 ## Cypress xpath
 
