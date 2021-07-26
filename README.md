@@ -100,4 +100,33 @@ Note: Orderpayment feature is not implemented because there is not payment data 
       }
     },
 
+## Gherkins Scenarios
+Feature: Login
 
+    I want to validate the Login feature scenarios
+
+    Scenario: User is Logged In
+        Given I navigate to the home page
+        And I navigate to the login page
+        When I enter
+            | email | password |
+            | gtantas@gmail.com | password! |
+        And I click on register button
+        Then I should be logged in
+
+## Test Implementation
+import Login from '../PageObjects/login'
+const login = new Login()
+Given('I navigate to the home page',() => {
+    home.visitHome()    
+})
+
+## PageObjects Class
+class home{
+     visitHome(){
+        cy.visit('https://aboutyou.de',{ timeout: 30000 })
+        const cookie = cy.xpath('//*[@id="onetrust-accept-btn-handler"]')
+        cookie.click()
+    }
+}
+export default home
