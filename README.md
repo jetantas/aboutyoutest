@@ -69,6 +69,12 @@ Note: Orderpayment feature is not implemented because there is not payment data 
     -"test" : "npm run scripts || npm run posttest" 
    - },
 
+6. plugins/index.js
+7. const cucumber = require('cypress-cucumber-preprocessor').default
+   -module.exports = (on, config) => {
+  -on('file:preprocessor',cucumber())
+-}
+
 ## Cypress xpath
 
 1. npm install cypress-xpath
