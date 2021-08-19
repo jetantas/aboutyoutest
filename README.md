@@ -48,32 +48,32 @@ Note: Orderpayment feature is not implemented because there is not payment data 
 
 1. npm install --save-dev cypress-cucumber-preprocessor
 2. Add in plugins/index.js  
-    -const cucumber = require('cypress-cucumber-preprocessor').default
-    -module.exports = (on, config) => {
-      -on('file:preprocessor',cucumber())
-    -}
-4. Add/edit dependencies in cypress.json 
+    const cucumber = require('cypress-cucumber-preprocessor').default
+    module.exports = (on, config) => {
+      on('file:preprocessor',cucumber())
+    }
+3. Add/edit dependencies in cypress.json 
     "testFiles": "**/*.feature" 
-5. Add/edit dependencies in package.json
-   -"cypress-cucumber-preprocessor": {
-    -"nonGlobalStepDefinitions": true
-    -}
+4. Add/edit dependencies in package.json
+   "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+    }
     
-    -"scripts": {
-    -"clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
-    -"pretest": "npm run clean:reports", 
-    -"scripts": "cypress run",
-    -"combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
-    -"generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
-    -"posttest": "npm run combine-reports && npm run generate-report",
-    -"test" : "npm run scripts || npm run posttest" 
-   - },
+    "scripts": {
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
+    "pretest": "npm run clean:reports", 
+    "scripts": "cypress run",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "test" : "npm run scripts || npm run posttest" 
+    },
 
-6. plugins/index.js
-7. const cucumber = require('cypress-cucumber-preprocessor').default
-   -module.exports = (on, config) => {
-  -on('file:preprocessor',cucumber())
--}
+5. plugins/index.js
+6. const cucumber = require('cypress-cucumber-preprocessor').default
+   module.exports = (on, config) => {
+  on('file:preprocessor',cucumber())
+}
 
 ## Cypress xpath
 
