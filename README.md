@@ -96,7 +96,7 @@ Note: Orderpayment feature is not implemented because there is not payment data 
      "baseUrl": "https://react-redux.realworld.io",
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
-      "reporterEnabled": "mochaawesome",
+      "reporterEnabled": "mochawesome",
       "mochawesomeReporterOptions": {
         "reportDir": "cypress/reports/mocha",
         "quite": true,
